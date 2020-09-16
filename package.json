@@ -1,0 +1,118 @@
+{
+  "name": "eslint-config-r1ckyrockz",
+  "version": "1.0.0",
+  "description": "personal eslint config for r1ckyrockz",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "install:clean": "rm -rf node_modules && rm yarn.lock && yarn",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r1ckyrockz/eslint-config-r1ckyrockz"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "r1ckyrockz",
+    "javascript",
+    "styleguide",
+    "react",
+    "typescript",
+    "jest",
+    "testing-library"
+  ],
+  "author": "Riccardo Carano <admin@rr-cube.de> (https://rr-cube.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r1ckyrockz/eslint-config-r1ckyrockz/issues"
+  },
+  "homepage": "https://github.com/r1ckyrockz/eslint-config-r1ckyrockz#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "4.1.1",
+    "@typescript-eslint/parser": "4.1.1",
+    "babel-eslint": "10.1.0",
+    "confusing-browser-globals": "1.0.9",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-inclusive-language": "1.2.1",
+    "eslint-plugin-jest": "24.0.1",
+    "eslint-plugin-jest-dom": "3.2.3",
+    "eslint-plugin-jest-formatting": "2.0.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "eslint-plugin-sonarjs": "0.5.0",
+    "eslint-plugin-sort-keys-fix": "1.1.1",
+    "eslint-plugin-testing-library": "3.8.0",
+    "eslint-plugin-unicorn": "21.0.0",
+    "read-pkg-up": "7.0.1",
+    "typescript": "4.0.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
+    "@types/jest": "26.0.13",
+    "eslint": "7.9.0",
+    "jest": "26.4.2",
+    "jest-watch-typeahead": "0.6.1",
+    "prettier": "2.1.2",
+    "semantic-release": "17.1.1"
+  },
+  "peerDependencies": {
+    "eslint": "7.9.0"
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/(overrides|rulesets|utils)/**/*.{js,jsx,ts,tsx}",
+      "src/createConfig.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "coverageDirectory": "coverage",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ]
+        }
+      ]
+    ]
+  }
+}
